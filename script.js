@@ -55,10 +55,14 @@ document.getElementById("miFormulario").addEventListener("submit", async functio
     loadingMessage.style.textAlign = "center";
     document.body.appendChild(loadingMessage);
     
-    // Cargar usuario.html dentro del iframe sin heredar estilos
-    let iframe = document.getElementById("usuarioFrame");
-    iframe.src = "invitation.html";
-    iframe.style.display = "block"; // Hacer visible el iframe
+ // Antes de mostrar el iframe, ocultar el footer de folder.html
+document.querySelector("p").style.display = "none"; 
+
+// Mostrar el iframe
+let iframe = document.getElementById("usuarioFrame");
+iframe.src = "invitation.html";
+iframe.style.display = "block";
+
     
     // Eliminar mensaje de carga después de mostrar usuario.html
     iframe.onload = function() {
